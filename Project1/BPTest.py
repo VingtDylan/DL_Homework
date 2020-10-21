@@ -1,5 +1,5 @@
 import random
-
+import os
 import torch
 
 from MyUtil import *
@@ -13,24 +13,26 @@ def main()->None:
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
 
-    file_path = "Project1/iris.data"
+    file_path = "iris.data"
     iris_features, iris_class = load_data(file_path)
     train_x , train_y , validate_x , validate_y , test_x , test_y = train_test_validate_split(iris_features, iris_class, ratio = [0.8,0.1,0.1],random_state = 0)
 
     epochs = 1
     lr = 0.05
     # 定义layer和weight
-    layer = [4,4,4,3]
+    layer = [4,4,5,3]
     weight12 = np.random.normal(loc=0., scale=1., size=(layer[1], layer[0])) / np.sqrt(layer[0])
     weight23 = np.random.normal(loc=0., scale=1., size=(layer[2], layer[1])) 
     weight34 = np.random.normal(loc=0., scale=1., size=(layer[3], layer[2])) 
     weight = [weight12,weight23,weight34]
     
     dnn = DNN(layer = layer,weight = weight)
+    np.set_printoptions(suppress=True)
     dnn.train_validate(train_x, train_y, validate_x , validate_y, Epochs = epochs, batch = 1, lr = 0.05, show = False, grad_show = True)
     # dnn.test(test_x, test_y)
     
-    torch.set_printoptions(precision = 5)
+    torch.set_printoptions(precision = 6)
+    np.set_printoptions(suppress=True)
     net = DNN_PYTORCH(layer = layer,weight = weight)
     optimizer = torch.optim.SGD(net.parameters(), lr = lr) 
     criterion = CEL()

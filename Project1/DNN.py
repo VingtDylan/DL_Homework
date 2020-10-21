@@ -241,7 +241,7 @@ class Layer:
         return 1.0 / (1.0 + np.exp(-input))
 
     def backPropS_i(self):
-        """ sigmoidx导数手动实现
+        """ sigmoid导数手动实现
         :param x: 输入(sigmoid输出值)
         :return : 计算出的sigmoid导数
         """
@@ -260,11 +260,11 @@ def main()->None:
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
 
-    file_path = "Project1/iris.data"
+    file_path = "iris.data"
     iris_features, iris_class = load_data(file_path)
     train_x , train_y , validate_x , validate_y , test_x , test_y = train_test_validate_split(iris_features, iris_class, ratio = [0.8,0.1,0.1],random_state = 0)
 
-    epochs = 100
+    epochs = 400
     lr = 0.05
     # 定义layer和weight
     layer = [4,10,20,3]

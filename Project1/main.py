@@ -13,7 +13,7 @@ def main()->None:
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
 
-    file_path = "Project1/iris.data"
+    file_path = "iris.data"
     iris_features, iris_class = load_data(file_path)
     train_x , train_y , validate_x , validate_y , test_x , test_y = train_test_validate_split(iris_features, iris_class, ratio = [0.8,0.1,0.1],random_state = 0)
 

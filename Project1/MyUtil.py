@@ -7,7 +7,7 @@ import torch
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
-def load_data(path ="Project1/iris.data")->list:
+def load_data(path ="./iris.data")->list:
     """加载数据集,并进行one-hot编码
     :param path: 数据集文件路径
     :return: 处理好的features和labels
