@@ -13,14 +13,13 @@
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="C:\Users\陈勇虎\Desktop\Project\Project1\images\model.png">
+    src="images\model.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">多层感知机模型</div>
 </center>
-![]()
 
 另一方面，为了提高系统的拓展性，实验设计中，对于隐含层$h_1,h_2$的隐含层结点数都是可变的，甚至，对于隐含层的个数也可以改变。这部分将在后面进行说明
 
@@ -106,7 +105,7 @@ test_y = Labels[cnt_train + cnt_validate:]
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="C:\Users\陈勇虎\Desktop\Project\Project1\images\modelDNN.png">
+    src="images\modelDNN.png">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -118,7 +117,7 @@ test_y = Labels[cnt_train + cnt_validate:]
     <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\Neu.png">
+        src="images\Neu.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
@@ -130,7 +129,7 @@ test_y = Labels[cnt_train + cnt_validate:]
     <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\layer.png">
+        src="images\layer.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
@@ -168,7 +167,7 @@ test_y = Labels[cnt_train + cnt_validate:]
      <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\DNN.png">
+        src="images\DNN.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
@@ -279,7 +278,7 @@ test_y = Labels[cnt_train + cnt_validate:]
     <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\weight_init.png">
+        src="images\weight_init.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
@@ -293,7 +292,7 @@ test_y = Labels[cnt_train + cnt_validate:]
     <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\BPTest.png">
+        src="images\BPTest.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
@@ -316,7 +315,7 @@ test_y = Labels[cnt_train + cnt_validate:]
     <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\loss_curve.png">
+        src="images\loss_curve.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
@@ -329,7 +328,7 @@ test_y = Labels[cnt_train + cnt_validate:]
     <center>
         <img style="border-radius: 0.3125em;
         box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-        src="C:\Users\陈勇虎\Desktop\Project\Project1\images\comment.png">
+        src="images\comment.png">
         <br>
         <div style="color:orange; border-bottom: 1px solid #d9d9d9;
         display: inline-block;
