@@ -37,3 +37,11 @@ def split_data_label(sequence, data_label):
         X.append(np.array(data_label.iloc[i: i + sequence, 1:-1], dtype = np.float32))
         Y.append(np.array(data_label.iloc[i + sequence, -1], dtype = np.float32))
     return X, Y
+
+def split_data_label_merge(sequence, data_label, delay = 1):
+    X = []
+    Y = []
+    for i in range(data_label.shape[0] - sequence - delay + 1):
+        X.append(np.array(data_label.iloc[i: i + sequence, 1 : -6], dtype = np.float32))
+        Y.append(np.array(data_label.iloc[i + sequence + delay - 1, -6 : ], dtype = np.float32))
+    return X, Y

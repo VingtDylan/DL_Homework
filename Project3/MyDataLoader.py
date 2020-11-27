@@ -47,7 +47,7 @@ def load_Indices_Data(kind = "NKY", usage = "train"):
     return Indices
 
 def load_LME_Data(kind = "Copper", usage = "train"):
-    LME_names = ["id","date","LME_Attr"]
+    LME_names = ["id","date","LME_" + kind]
 
     FolderName = "Train_data" if usage == "train" else "Validation_data"
     LME_path = FolderName + "/" + "LME" + "/" + "LME" + kind + "_OI_"+ usage + ".csv"
@@ -82,7 +82,7 @@ def load_LME_3M_Data(kind = "Copper", usage = "train"):
     return LME_3M
 
 def load_LME_Label(kind = "Copper", seq = "1d"):
-    LME_Label_1d_name = ["id","date", "label"]
+    LME_Label_1d_name = ["id","date", "label_" + kind]
     LME_Label_1d_path = "Train_data" + "/" + "Label" + "/" + "Label_LME" + kind + "_train_" + seq + ".csv"
     LME_Label_1d = pd.read_csv(LME_Label_1d_path,skiprows = 1, names = LME_Label_1d_name)
     LME_Label_1d.drop(labels = "id", axis = 1,inplace = True)

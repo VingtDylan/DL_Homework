@@ -44,7 +44,7 @@ def main():
     # 固定随机种子
     set_seed(10)
     # 参数设置
-    args.epochs = 230 # 250 55.88 decay 9939
+    args.epochs = 300 # 250 55.88 decay 9939
     args.layers = 2
     args.input_size = 36
     args.hidden_size = 128
@@ -68,7 +68,9 @@ def main():
 
     model.train(args, train_loader, criterion, optimizer)
     model.train_test(args, train_loader)
-    model.test_test(args, test_loader)
+
+    file_name = os.path.basename(__file__).split(".")[0]
+    model.test_test(args, test_loader, file_name)
 
 if __name__ == "__main__":
     main()

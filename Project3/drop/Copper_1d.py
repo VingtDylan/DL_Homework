@@ -68,7 +68,9 @@ def main():
 
     model.train(args, train_loader, criterion, optimizer)
     model.train_test(args, train_loader)
-    model.test_test(args, test_loader)
+    
+    file_name = os.path.basename(__file__).split(".")[0]
+    model.test_test(args, test_loader, file_name)
 
 if __name__ == "__main__":
     main()

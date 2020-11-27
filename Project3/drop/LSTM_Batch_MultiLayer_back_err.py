@@ -125,7 +125,7 @@ def main():
     # print("LSTM->hn输出如下")
     # print(hn.detach().numpy())
     # print("LSTM->cn输出如下")
-    # print(cn.detach().numpy())
+    print(cn.detach().numpy())
     # print(hn.shape)
     # print(cn.shape)
     
@@ -141,7 +141,7 @@ def main():
     # print("MyLSTM->hn输出如下")
     # print(myhn.detach().numpy())
     # print("MyLSTM->cn输出如下")
-    # print(mycn.detach().numpy())
+    print(mycn.detach().numpy())
     # print(myhn.shape)
     # print(mycn.shape)
 

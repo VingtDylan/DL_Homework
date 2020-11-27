@@ -9,6 +9,7 @@ from torch import Tensor
 from torch.nn import init
 from torch.nn import Parameter
 
+from Util import *
 
 class MyLSTM(nn.Module):    
     def __init__(self, input_size, hidden_size, num_layers = 1, batch_first = True):
@@ -53,6 +54,7 @@ class MyLSTM(nn.Module):
         self.split["o"] = np.linspace(3 * self.hidden_size, 4 * self.hidden_size, self.hidden_size, endpoint = False)
 
         self.reset_weigths()
+        
     def reset_weigths(self):
         stdv = 1.0 / math.sqrt(self.hidden_size)
         for weight in self.parameters():
@@ -81,7 +83,7 @@ class MyLSTM(nn.Module):
                 f_t = torch.sigmoid(self.weight_ih[tp][f] @ x_t + self.bias_ih[tp][f].unsqueeze(0).t() + self.weight_hh[tp][f] @ h_tp + self.bias_hh[tp][f].unsqueeze(0).t())
                 g_t =    torch.tanh(self.weight_ih[tp][g] @ x_t + self.bias_ih[tp][g].unsqueeze(0).t() + self.weight_hh[tp][g] @ h_tp + self.bias_hh[tp][g].unsqueeze(0).t())
                 o_t = torch.sigmoid(self.weight_ih[tp][o] @ x_t + self.bias_ih[tp][o].unsqueeze(0).t() + self.weight_hh[tp][o] @ h_tp + self.bias_hh[tp][o].unsqueeze(0).t())
-                
+
                 c_tp = f_t * c_tp + i_t * g_t
                 h_tp = o_t * torch.tanh(c_tp)
 
@@ -105,47 +107,37 @@ def show_weight(model):
         print(param)
 
 def main():
-    seed = 10
-    random.seed(seed)
-    np.random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    torch.backends.cudnn.enabled = True
-
+    # set_seed(10)
     input = torch.randn(5, 3, 2)
     h0 = torch.randn(2, 5, 3)
     c0 = torch.randn(2, 5, 3)
-    rnn = nn.LSTM(input_size = 2, hidden_size = 3, num_layers = 2, batch_first = True, dropout = 0)
+    rnn = nn.LSTM(input_size = 2, hidden_size = 3, num_layers = 2, batch_first = True)
     print("LSTM库的输出")
     reset_weigths(rnn)
     # show_weight(rnn)
     output, (hn, cn) = rnn(input, (h0, c0))
     print("LSTM->output输出如下")
     print(output.detach().numpy())
-    # print("LSTM->hn输出如下")
-    # print(hn.detach().numpy())
-    # print("LSTM->cn输出如下")
-    # print(cn.detach().numpy())
+    print("LSTM->hn输出如下")
+    print(hn.detach().numpy())
+    print("LSTM->cn输出如下")
+    print(cn.detach().numpy())
     # print(hn.shape)
     # print(cn.shape)
     
     print("\n")
 
-    myrnn = MyLSTM(input_size = 2, hidden_size = 3, num_layers = 2, batch_first = True, dropout = 0)
+    myrnn = MyLSTM(input_size = 2, hidden_size = 3, num_layers = 2, batch_first = True)
     print("自己实现的MyLSTM类的输出")
     reset_weigths(myrnn)
     # show_weight(myrnn)
     myoutput, (myhn, mycn) = myrnn(input, (h0, c0))
     print("MyLSTM->output输出如下")
     print(myoutput.detach().numpy())
-    # print("MyLSTM->hn输出如下")
-    # print(myhn.detach().numpy())
-    # print("MyLSTM->cn输出如下")
-    # print(mycn.detach().numpy())
+    print("MyLSTM->hn输出如下")
+    print(myhn.detach().numpy())
+    print("MyLSTM->cn输出如下")
+    print(mycn.detach().numpy())
     # print(myhn.shape)
     # print(mycn.shape)
 
