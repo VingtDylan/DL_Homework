@@ -40,8 +40,10 @@ class LSTM_Stock(nn.Module):
         out6 = self.linear6(out[:, -1, :]) 
         return [out1, out2, out3, out4, out5, out6]
     
-    def train(self, args, train_loader, criterion, optimizer):
+    def train(self, args, train_loader, val_loader, criterion, optimizer):
         for epoch in range(args.epochs):
+            train_loss = 0
+            train_counter = 0
             for idx, (data, label) in enumerate(train_loader):
                 if args.useGPU:
                     data = data.squeeze(1).cuda()
@@ -53,11 +55,22 @@ class LSTM_Stock(nn.Module):
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
+                train_loss += loss.item()
+                train_counter += label.size(0)
 
-            # for param in self.named_parameters():
-            #     print(param)
-            print(epoch, loss.item())
-            # print("---------------------------" + str(epoch))
+            val_loss = 0
+            val_counter = 0
+            for idx, (data, label) in enumerate(val_loader):
+                if args.useGPU:
+                    data = data.squeeze(1).cuda()
+                    pred = self(Variable(data).cuda())
+                    label = label.cuda()
+                loss = criterion(pred[0], label[:,0].long())
+                for i in range(1, 6):
+                    loss += criterion(pred[i], label[:,i].long())
+                val_loss += loss.item()
+                val_counter += label.size(0)
+            print('Epoch: {} \tTraining Loss: {:.8f} \tValidation Loss {:.8f} \t'.format(epoch + 1, train_loss / train_counter, val_loss / val_counter))
     
     def train_test(self, args, train_loader):
         s = [0] * 6
@@ -97,6 +110,7 @@ class LSTM_Stock(nn.Module):
                     t[i] += label.size(0)
                     s[i] += (predicted.cpu() == label[:,i].cpu()).sum().item()
         acc = [round(s[i] * 100.0 / t[i], 2) for i in range(6)]
+
         print("------------测试集--------------")
         print("金属次序: Copper Aluminium, Lead, Nickel, Tin, Zinc")
         print("测试集样本个数: ")

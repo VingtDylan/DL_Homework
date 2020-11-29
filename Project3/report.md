@@ -63,35 +63,39 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 * 根据前面所述的文件索引方式，项目中实现了以下几个函数，详情见**`MyDataLoader.py`**文件。
 
     ```python
-    def load_COMEX_Data(kind = "Copper", usage = "train")
-    def load_Indices_Data(kind = "NKY", usage = "train")
-    def load_LME_Data(kind = "Copper", usage = "train")
-    def load_LME_3M_Data(kind = "Copper", usage = "train")
-    def load_LME_Label(kind = "Copper", seq = "1d")
+    def max_min_Scale(data, MAX = None, MIN = None)
+    def load_COMEX_Data(kind = "Copper", usage = "train", MAX = None, MIN = None, delay = 1)
+    def load_Indices_Data(kind = "NKY", usage = "train", MAX = None, MIN = None, delay = 1)
+    def load_LME_Data(kind = "Copper", usage = "train", MAX = None, MIN = None, delay = 1)
+    def load_LME_3M_Data(kind = "Copper", usage = "train", MAX = None, MIN = None, delay = 1)
+    def load_LME_Label(kind = "Copper", seq = "1d", delay = 1)
     ```
 
+    * **max_min_Scale**：根据输入的参数可以对数据归一化
     * **load_COMEX_Data**：根据输入的参数可以读取以COMEX为开头的文件
-
     * **load_Indices_Data**：根据输入的参数可以读取以Indices为开头的文件
-
     * **load_LME_Data:**  根据输入的参数可以读取以LME为开头但不包含3M的文件
-
     * **load_LME_3M_Data**：根据输入的参数可以读取以LME_3M为开头的文件
-
     * **load_LME_Label**:  根据输入的参数可以读取以Label为开头的文件
+
+* 再处理训练集文件时,会将训练集特征值的**最大值和最小值保留**,用来对测试集数据进行归一化
+
+* 根据delay将训练集数据的最后delay个保留,用于**测试集前几个日期的跌涨预测**
+
+* 同理,根据delay需要将训练集数据的最后delay个标签保留,用于**构建测试集前几个日期的跌涨预测**
 
 * 为了方便所有数据检查，前面所述方式读取的文件经过处理后，都将会保存在**DataFolders**文件夹下，详情可查看提交目录
 
 * 为了方便所有数据的读取，项目中实现了前面功能函数的多次调用，以**字典**形式返回同一类前缀的数据，可以根据**金属名**获取数据，详情见**`MyDataLoader.py`**文件。
 
     ```python
-    def load_COMEX_Train_Validation()
-    def load_Indices_Train_Validation()
-    def load_LME_Train_Validation()
-    def load_LME_3M_Train_Validation()
-    def load_LME_Label_1d()
-    def load_LME_Label_20d()
-    def load_LME_Label_60d()
+    def load_COMEX_Train_Validation(delay = 1)
+    def load_Indices_Train_Validation(delay = 1)
+    def load_LME_Train_Validation(delay = 1)
+    def load_LME_3M_Train_Validation(delay = 1)
+    def load_LME_Label_1d(delay = 1)
+    def load_LME_Label_20d(delay = 20)
+    def load_LME_Label_60d(delay = 60)
     ```
 
     * **load_COMEX_Train_Validation**：根据输入的参数可以读取以COMEX为开头的所有文件，包括训练集和测试集
@@ -130,6 +134,7 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
                 t = pd.DataFrame(Validation_Label.loc[Validation_Label["raw_id"].str.contains(p)])
                 t["raw_id"] = t["raw_id"].apply(lambda x: x[-10:])
                 t.rename(columns={'raw_id':'date'},inplace=True) 
+                t.rename(columns={'label':'label_' + label_name},inplace=True) 
                 s[label_name + seq_name] = t
                 outFolderName = "Validation_data" + "/Split_Validation_Label/" + label_name + "_" + seq_name + "_split_handler.csv"
                 t.to_csv(outFolderName,index = False,sep=',')
@@ -148,10 +153,11 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 
 * 对于某一天的某一个属性值为空的情况，数据将会直接丢弃
 
-* 为模型处理，所有的数据，通过可以通过**max-min**归一化，经过观察数据差异，对此进行了一些更改，表达式如下，实现代码见**`MyDataLoader.py`**文件
+* 为模型处理，所有的训练集数据，通过可以通过**max-min**归一化，经过观察数据差异，对此进行了一些更改，表达式如下，实现代码见**`MyDataLoader.py`**文件
   $$
   scaler = x_i - mean(x) / (max(x) = min(x)) \tag{1}
   $$
+* 同理对于测试集数据,也采用了上面的公式进行预测,不过,这里的最大值和最小值需要采用**训练集对应属性的最大值和最小值**.
 
 ## LSTM模型原理及实现方案
 
@@ -278,6 +284,8 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 
 * 运行**`LSTM_Batch_MulLtiLayer.py`**的文件的话，该函数不固定随机种子，以保证功能的正确性。
 
+* 这里实现了一个**`reset_weight`**函数,用来对网络进行初始化,,用来保证nn.LSTM和自己实现的网络,初始的状态相同.
+
     ```pyhon
     input = torch.randn(5, 3, 2)
     h0 = torch.randn(2, 5, 3)
@@ -388,6 +396,11 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 * 编程语言: Python3.7.6
 * 显卡: GeForce RTX 2060
 
+### 数据处理
+
+* 训练集，验证集划分比例: **8:2**。
+* 数据处理部分见前文所述的**`MyDataLoader.py`**文件。
+
 ### LSTM模型文件
 
 * MyLSTM_Stock.py：内容在前面已经说明，直接运行该文件即可。
@@ -398,22 +411,12 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 
 随机种子固定为10；
 
-迭代次数:400； 隐含层层数:2；输入特征数: 42；隐含层维度256；
+迭代次数:110； 隐含层层数:1；输入特征数: 66；隐含层维度256；
 
-学习率: 0.0001；序列长度:14；批长度:16；
+学习率: 0.001；序列长度:14；批长度:32；
 
-   <center>
-       <img style="border-radius: 0.3125em;
-       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-       src="images\param1d.png">
-       <br>
-       <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-       display: inline-block;
-       color: #999;
-       padding: 2px;">main_1d参数设置情况</div>
-   </center>
 
-终端输出如下，平均准确率为 55.12%：
+终端输出如下，平均准确率为 53.09%：
 
    <center>
        <img style="border-radius: 0.3125em;
@@ -432,22 +435,12 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 
 随机种子固定为10；
 
-迭代次数:150； 隐含层层数:1；输入特征数: 66；隐含层维度256；
+迭代次数:130； 隐含层层数:2；输入特征数: 66；隐含层维度256；
 
-学习率: 0.0001；序列长度:14；批长度:16；
+学习率: 0.001；序列长度:21；批长度:32；
 
-   <center>
-       <img style="border-radius: 0.3125em;
-       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-       src="images\param20d.png">
-       <br>
-       <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-       display: inline-block;
-       color: #999;
-       padding: 2px;">main_20d参数设置情况</div>
-   </center>
 
-终端输出如下，平均准确率为 59.12%：
+终端输出如下，平均准确率为 64.02%：
 
    <center>
        <img style="border-radius: 0.3125em;
@@ -467,22 +460,12 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 
 随机种子固定为10；
 
-迭代次数:150； 隐含层层数:1；输入特征数: 72；隐含层维度132；
+迭代次数:140； 隐含层层数:1；输入特征数: 72；隐含层维度256；
 
-学习率: 0.0001；序列长度:14；批长度:8；
+学习率: 0.0005；序列长度:60；批长度:32；
 
-   <center>
-       <img style="border-radius: 0.3125em;
-       box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-       src="images\param60d.png">
-       <br>
-       <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-       display: inline-block;
-       color: #999;
-       padding: 2px;">main_60d参数设置情况</div>
-   </center>
 
-终端输出如下，平均准确率为 44.95%：
+终端输出如下，平均准确率为 63.93%：
 
    <center>
        <img style="border-radius: 0.3125em;
@@ -511,11 +494,11 @@ Train_data和Validation_data两个文件下分别存储用于训练和测试的�
 
   * DataFolders: 运行过程中生成的中间文件
   * Train_data,Validation_data: 训练集和测试集数据
-  * LSTM_Batch_MultiLayer.py: LSTM模型实现
-  * MyDataLoader: 数据处理功能实现
-  * MyLSTM_Stock: 预测模型
-  * Parse,Util:辅助类
-  * main_1d,main_20d,main60d:金属预测的main函数
+  * **LSTM_Batch_MultiLayer.py: LSTM模型实现**
+  * **MyDataLoader: 数据处理功能实现**
+  * **MyLSTM_Stock: 预测模型**
+  * **Parse,Util:辅助类**
+  * **main_1d,main_20d,main60d:金属预测的main函数**
   * report.md,report.pdf: 实验报告的markdown和pdf版本，markdown版本会便于阅读。
 
 

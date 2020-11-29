@@ -4,6 +4,10 @@ HomeWork of Deeplearning in ustc,2020 Fall
 
 No plagiarism!
 
+No plagiarism!
+
+No plagiarism!
+
 
 
 pytorch,numpy and pandas packages[^packages]are vital to this project.
