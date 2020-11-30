@@ -16,8 +16,8 @@ from MyDataLoader import *
 
 def load(args):
     # 训练集 测试集的features
-    LME_train, LME_validation = load_LME_Train_Validation(args.sequence_length + args.delay)
-    LME_3M_train, LME_3M_validation = load_LME_3M_Train_Validation(args.sequence_length + args.delay)
+    LME_train, LME_validation = load_LME_Train_Validation(args.sequence_length)
+    LME_3M_train, LME_3M_validation = load_LME_3M_Train_Validation(args.sequence_length)
     # merge main features
     keys = ["Aluminium", "Lead", "Nickel", "Tin", "Zinc"]
     LME_train_all, LME_validation_all = LME_train["Copper"], LME_validation["Copper"]
@@ -48,7 +48,7 @@ def load(args):
         LME_validation_all.fillna(method="bfill", inplace=True)
 
     # Indices features
-    Indices_train, Indices_validation = load_Indices_Train_Validation(delay = args.sequence_length + args.delay)
+    Indices_train, Indices_validation = load_Indices_Train_Validation(delay = args.sequence_length)
     for data in Indices_train.values():
         LME_train_all = pd.merge(LME_train_all,data, how = 'outer', on = 'date', sort = True)
         LME_train_all.fillna(method="ffill", inplace=True)
@@ -59,7 +59,7 @@ def load(args):
         LME_validation_all.fillna(method="bfill", inplace=True)
 
     # COMEX features
-    COMEX_train, COMEX_validation = load_COMEX_Train_Validation(delay = args.sequence_length + args.delay)
+    COMEX_train, COMEX_validation = load_COMEX_Train_Validation(delay = args.sequence_length)
     for data in COMEX_train.values():
         LME_train_all = pd.merge(LME_train_all,data, how = 'outer', on = 'date', sort = True)
         LME_train_all.fillna(method="ffill", inplace=True)
@@ -70,7 +70,7 @@ def load(args):
         LME_validation_all.fillna(method="bfill", inplace=True)
     
     # 训练集 测试集的labels_60d
-    LME_Label_train_60d, LME_Label_train_60d_extra = load_LME_Label_60d(delay = args.sequence_length + args.delay)
+    LME_Label_train_60d, LME_Label_train_60d_extra = load_LME_Label_60d(delay = args.sequence_length)
     LME_Label_Validation = load_Validation_Label()
     keys = ["Copper", "Aluminium", "Lead", "Nickel", "Tin", "Zinc"]
     for key in keys:
@@ -78,9 +78,11 @@ def load(args):
         LME_validation_material_60d = LME_Label_Validation[key + "60d"]
         LME_validation_material_60d = pd.concat([LME_Label_train_60d_extra[key], LME_validation_material_60d], axis = 0)
         LME_train_all = pd.merge(LME_train_all,LME_train_material_Label_60d, how = 'outer', on = 'date', sort = True)
+        LME_train_all.dropna(subset=["label_" + key], inplace=True)
         LME_train_all.fillna(method="ffill", inplace=True)
         LME_train_all.fillna(method="bfill", inplace=True)
         LME_validation_all =  pd.merge(LME_validation_all,LME_validation_material_60d, how = 'outer', on = 'date', sort = True)
+        LME_validation_all.dropna(subset=["label_" + key], inplace=True)
         LME_validation_all.fillna(method="ffill", inplace=True)
         LME_validation_all.fillna(method="bfill", inplace=True)
 
@@ -90,19 +92,18 @@ def main():
     # 固定随机种子
     set_seed(10)
     # 参数设置
-    args.epochs = 140
+    args.epochs = 200
     args.layers = 1
     args.input_size = 72
     args.hidden_size = 256 
-    args.lr = 0.0005
+    args.lr = 0.001
     args.sequence_length = 60
     args.batch_size  = 32
-    args.delay = 60
     # 加载数据集并切分
     train_data_label_60d, test_data_label_60d = load(args)
     sequence = args.sequence_length
-    trainx, trainy, valx, valy = split_data_label_merge(sequence = sequence,  data_label = train_data_label_60d, delay = 60, split = True)
-    testx, testy = split_data_label_merge(sequence = sequence,  data_label = test_data_label_60d, delay = 60, split = False)
+    trainx, trainy, valx, valy = split_data_label_merge(sequence = sequence,  data_label = train_data_label_60d, split = True)
+    testx, testy = split_data_label_merge(sequence = sequence,  data_label = test_data_label_60d, split = False)
     train_loader = DataLoader(dataset = Mydataset(trainx, trainy), batch_size = args.batch_size,shuffle = False)
     val_loader = DataLoader(dataset = Mydataset(valx, valy), batch_size = args.batch_size,shuffle = False)
     test_loader = DataLoader(dataset = Mydataset(testx, testy), batch_size = args.batch_size, shuffle = False)

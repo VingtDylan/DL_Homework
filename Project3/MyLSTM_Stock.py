@@ -14,8 +14,9 @@ class LSTM_Stock(nn.Module):
         self.output_size = output_size
         self.batch_first = batch_first
         # 如果需要使用实现的LSTM，请将self.rnn改由 MyLSTM调用
-        # self.rnn = MyLSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=self.batch_first)
-        self.rnn = nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=self.batch_first)
+        self.rnn = MyLSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=self.batch_first)
+        # 如果需要使用实现的LSTM，请将self.rnn改由 nn.LSTM调用
+        # self.rnn = nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=self.batch_first)
         self.linear1 = nn.Linear(self.hidden_size, self.output_size)
         self.linear2 = nn.Linear(self.hidden_size, self.output_size)
         self.linear3 = nn.Linear(self.hidden_size, self.output_size)
