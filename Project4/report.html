@@ -1,0 +1,1675 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>report</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=' first-line-indent'><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#center深度学习实验四-机器翻译center">深度学习实验四-机器翻译</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#实验内容">实验内容</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n6"><a class="md-toc-inner" href="#数据集处理方法和实现方案">数据集处理方法和实现方案</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n8"><a class="md-toc-inner" href="#数据集处理函数实现">数据集处理函数实现</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n9"><a class="md-toc-inner" href="#数据处理核心类dataloader">数据处理核心类<code>DataLoader</code></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n48"><a class="md-toc-inner" href="#分批类batch">分批类<code>Batch</code></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n50"><a class="md-toc-inner" href="#transformer模型和构建">transformer模型和构建</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n51"><a class="md-toc-inner" href="#整体结构">整体结构</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n58"><a class="md-toc-inner" href="#encoder-decoder">Encoder, Decoder</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n74"><a class="md-toc-inner" href="#transformer实现">transformer实现</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n77"><a class="md-toc-inner" href="#模型训练和测试说明">模型训练和测试说明</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n78"><a class="md-toc-inner" href="#数据集处理">数据集处理</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n80"><a class="md-toc-inner" href="#可执行文件说明">可执行文件说明</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n88"><a class="md-toc-inner" href="#mainipynb运行说明">main.ipynb运行说明</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n97"><a class="md-toc-inner" href="#mainevaluateipynb运行说明">main_evaluate.ipynb运行说明</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n107"><a class="md-toc-inner" href="#提交目录包含文件说明">提交目录包含文件说明</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n112"><a class="md-toc-inner" href="#未提交模型以及其他文件链接">未提交模型以及其他文件链接</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n128"><a class="md-toc-inner" href="#测试集前50条数据测试结果对比">测试集前50条数据测试结果对比</a></span></p></div><h1><a name="center深度学习实验四-机器翻译center" class="md-header-anchor"></a><center><span>深度学习实验四-机器翻译</span></center></h1><hr /><h2><a name="实验内容" class="md-header-anchor"></a><span>实验内容</span></h2><p><span>复现transformer模型，实现机器翻译</span></p><h2><a name="数据集处理方法和实现方案" class="md-header-anchor"></a><span>数据集处理方法和实现方案</span></h2><p><span>主要实现方法见文件</span><code>lib</code><span>文件夹下的</span><code>DataLoader.py</code><span>文件</span></p><h3><a name="数据集处理函数实现" class="md-header-anchor"></a><span>数据集处理函数实现</span></h3><h4><a name="数据处理核心类dataloader" class="md-header-anchor"></a><span>数据处理核心类</span><code>DataLoader</code></h4><ul><li><p><strong><code>DataLoader</code></strong><span>类实现了一下几个函数:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82999px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">__init__</span>(<span class="cm-variable-2">self</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">load</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">en_path</span>, <span class="cm-variable">cn_path</span>, <span class="cm-variable">max_seq</span> = <span class="cm-number">10000</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">build_dict</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">flag</span>, <span class="cm-variable">kind</span>, <span class="cm-variable">sentences</span>, <span class="cm-variable">max_words</span> = <span class="cm-number">1024</span> <span class="cm-operator">*</span> <span class="cm-number">128</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">wordToID</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">en</span>, <span class="cm-variable">cn</span>, <span class="cm-variable">en_dict</span>, <span class="cm-variable">cn_dict</span>, <span class="cm-variable">sort</span> = <span class="cm-keyword">False</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">split_Batch</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">en</span>, <span class="cm-variable">cn</span>, <span class="cm-variable">batch_size</span>, <span class="cm-variable">shuffle</span> = <span class="cm-keyword">True</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">prepare_train</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">g_max_seq1</span>, <span class="cm-variable">g_max_seq2</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">prepare_test</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">g_max_seq3</span>, <span class="cm-variable">test_path</span> = <span class="cm-variable">args</span>.<span class="cm-property">testPath</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">prepare_train_data</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">train_path</span> = <span class="cm-variable">args</span>.<span class="cm-property">trainPath</span>, <span class="cm-variable">valid_path</span> = <span class="cm-variable">args</span>.<span class="cm-property">validPath</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">prepare_word_dict</span>(<span class="cm-variable-2">self</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">prepare_train_id</span>(<span class="cm-variable-2">self</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">prepare_train_batch</span>(<span class="cm-variable-2">self</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">load_word_dict</span>(<span class="cm-variable-2">self</span>)</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 287px;"></div><div class="CodeMirror-gutters" style="display: none; height: 287px;"></div></div></div></pre></li><li><p><span>现对上述实现的函数做简要说明:</span></p><ul><li><p><code>_init__</code><span>：初始化函数</span></p></li><li><p><code>load(self, en_path, cn_path, max_seq = 10000</code><span>：数据集加载</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">参数说明</span>:</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">en_path</span>:<span class="cm-variable">英文数据集路径</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">cn_oath</span>:<span class="cm-variable">中文数据集路径</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">max_seq</span>:<span class="cm-variable">读取数据集的数据个数</span>(<span class="cm-variable">由于设备的问题，所有数据集无法全部加载</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">返回值</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">en</span>,<span class="cm-variable">cn</span>:<span class="cm-variable">分词后的英文数据集和中文数据集</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="display: none; height: 132px;"></div></div></div></pre></li><li><p><code>build_dict</code><span>：词典构造</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">参数说明:</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>flag:flag为True时，读取保存的字典，否则重新生成字典</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>kind：区分英文数据或是中文数据</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>sentences:用于构建词典的句子</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>max_words：字典容纳最大的词的数量</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">返回值：</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>word_dict, total_words, index_dict:字典(词-索引)，字典中总词数，字典(索引-词)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">额外说明:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>数据集处理时，额外添加了四个词:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>PAD, BOS, EOS, UNK = 'PAD', 'BOS', 'EOS', 'UNK'</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>用于表示填充字符，句首标识符，句尾标识符和不可识别字符。</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>此外，当flag为False时，将会把生成的字典保存下来，方便后续调用。</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>保存的文件即:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>* en_index_dic.npy</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>* en_total_words.txt</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>* en_word_dic.npy</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>* cn_index_dic.npy</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>* cn_total_words.txt</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>* cn_word_dic.npy</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 442px;"></div><div class="CodeMirror-gutters" style="display: none; height: 442px;"></div></div></div></pre></li><li><p><code>wordToID</code><span>:句子序列化</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">参数说明：</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>en：英文数据</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>cn：中文数据</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>en_dict：英文字典</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  cn_dict：中文字典</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  sort：是否排序，默认不排序</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="display: none; height: 132px;"></div></div></div></pre></li><li><p><code>split_Batch</code><span>:数据集分批</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">参数说明:</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>en:英文数据</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>cn:中文数据</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>batch_size:批数据个数</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>shuffle:是否打乱顺序</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">返回值:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>分批后的数据集</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 155px;"></div><div class="CodeMirror-gutters" style="display: none; height: 155px;"></div></div></div></pre></li><li><p><code>prepare_train</code><span>:准备训练使用的数据，字典等各种参数</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">参数说明:</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>g_max_seq1:训练集数据使用的个数</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>g_max_seq2:验证集数据使用的个数</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre></li><li><p><code>prepare_test</code><span>:准备测试使用的数据，字典等各种参数</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">参数说明：</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>g_max_seq3：测试集数据使用的个数</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>test_path：测试集数据路径</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre></li><li><p><code>prepare_train_data</code><span>：准备训练时所用的数据</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.82996px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">参数说明：</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>train_path ：训练集集数据路径</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>valid_path ：验证集数据路径</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre></li><li><p><code>prepare_word_dict</code><span>:调用生成字典函数，生成训练时所用的字典</span></p></li><li><p><code>prepare_train_id</code><span>:调用序列化函数，将训练时的数据序列化</span></p></li><li><p><code>prepare_train_batch</code><span>：调用数据分批函数，将训练时的数据分批</span></p></li><li><p><code>load_word_dict</code><span>: 调用生成字典函数，加载训练时产生的字典</span></p></li></ul></li></ul><h4><a name="分批类batch" class="md-header-anchor"></a><span>分批类</span><code>Batch</code></h4><p><span>通过对句子每个单词mask后,并分批,作为后续的网络输入.</span></p><h2><a name="transformer模型和构建" class="md-header-anchor"></a><span>transformer模型和构建</span></h2><h3><a name="整体结构" class="md-header-anchor"></a><span>整体结构</span></h3><p><span>transformer模型主要分为两大部分:</span></p><ul><li><span>Encoder：将自然语言序列映射为隐藏层 </span></li><li><span>Decoder：再将隐藏层映射为自然语言序列 seq2seq + Attention的训练方式，将注意力集中在解码端，transformer将注意力放在输入序列上，对输入序列做Attention，寻找序列内部的联系。 </span></li></ul><h3><a name="encoder-decoder" class="md-header-anchor"></a><span>Encoder, Decoder</span></h3><p><span>关键则在实现一下几个功能类</span></p><ul><li><span>Embedding</span></li><li><span>Positional Encoding:</span></li><li><span>Attention</span></li><li><span>Add &amp; Normalize</span></li><li><span>Feed forward</span></li><li><span>Add &amp; Normalize</span></li></ul><p><span>在</span><code>Mytransformer.py</code><span>文件中对这几类进行了实现,详情请查看该文件.</span></p><h3><a name="transformer实现" class="md-header-anchor"></a><span>transformer实现</span></h3><p><span>当前面所述的几个类完成以后,就可以根据论文描述的搭建起transformer类,具体请查看</span><code>Mytransformer.py</code><span>文件中的Transformer类.</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.83002px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">Transformer</span>(<span class="cm-variable">nn</span>.<span class="cm-property">Module</span>):</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">__init__</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">encoder</span>, <span class="cm-variable">decoder</span>, <span class="cm-variable">src_embed</span>, <span class="cm-variable">tgt_embed</span>, <span class="cm-variable">generator</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-builtin">super</span>(<span class="cm-variable">Transformer</span>, <span class="cm-variable-2">self</span>).<span class="cm-property">__init__</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">encoder</span> = <span class="cm-variable">encoder</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">decoder</span> = <span class="cm-variable">decoder</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">src_embed</span> = <span class="cm-variable">src_embed</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">tgt_embed</span> = <span class="cm-variable">tgt_embed</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">self</span>.<span class="cm-property">generator</span> = <span class="cm-variable">generator</span> </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">encode</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">src</span>, <span class="cm-variable">src_mask</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">self</span>.<span class="cm-property">encoder</span>(<span class="cm-variable-2">self</span>.<span class="cm-property">src_embed</span>(<span class="cm-variable">src</span>), <span class="cm-variable">src_mask</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">decode</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">memory</span>, <span class="cm-variable">src_mask</span>, <span class="cm-variable">tgt</span>, <span class="cm-variable">tgt_mask</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">self</span>.<span class="cm-property">decoder</span>(<span class="cm-variable-2">self</span>.<span class="cm-property">tgt_embed</span>(<span class="cm-variable">tgt</span>), <span class="cm-variable">memory</span>, <span class="cm-variable">src_mask</span>, <span class="cm-variable">tgt_mask</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">def</span> <span class="cm-def">forward</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">src</span>, <span class="cm-variable">tgt</span>, <span class="cm-variable">src_mask</span>, <span class="cm-variable">tgt_mask</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">self</span>.<span class="cm-property">decode</span>(<span class="cm-variable-2">self</span>.<span class="cm-property">encode</span>(<span class="cm-variable">src</span>, <span class="cm-variable">src_mask</span>), <span class="cm-variable">src_mask</span>, <span class="cm-variable">tgt</span>, <span class="cm-variable">tgt_mask</span>)</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 375px;"></div><div class="CodeMirror-gutters" style="display: none; height: 375px;"></div></div></div></pre><h2><a name="模型训练和测试说明" class="md-header-anchor"></a><span>模型训练和测试说明</span></h2><h3><a name="数据集处理" class="md-header-anchor"></a><span>数据集处理</span></h3><p><span>将数据集压缩后放在主目录的</span><code>DataFolders</code><span>文件夹下,即训练文件索引应</span><strong><code>./DataFolders/train_en</code></strong></p><h3><a name="可执行文件说明" class="md-header-anchor"></a><span>可执行文件说明</span></h3><p><span>文件提供了两个可以运行的notebook</span></p><ul><li><span>main.ipynb: 运行该文件即可训练文件,并调用训练好的模型进行测试</span></li><li><span>main_evaluate.ipynb:仅调用生成的模型进行预测</span></li></ul><p><span>下面对该文件运行进行简要说明</span></p><h3><a name="mainipynb运行说明" class="md-header-anchor"></a><span>main.ipynb运行说明</span></h3><p><span>实验运行平台为Google colab。</span></p><p><span>因此，不在该平台运行时，请注释文件的一下内容:</span></p><center>
+   <img style="border-radius: 0.3125em;
+   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="images\1.png">
+   <br>
+   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+   display: inline-block;
+   color: #999;
+   padding: 2px;">需要注释的内容</div>
+</center><p><span>文件中设置的参数如下:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 7.83002px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">set_seed(10)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.layers = 2</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.batch_size = 128</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.d_model = 256</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.d_ff = 1024</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.h_num = 8</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.dropout = 0.1</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">args.epochs = 20</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">g_max_seq1 = 1500000 # 训练集数据使用前150w个</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">g_max_seq2 = 150000  # 验证集数据使用前15w个</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">g_max_seq3 = 100 # 测试前100个数据</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 243px;"></div><div class="CodeMirror-gutters" style="display: none; height: 243px;"></div></div></div></pre><p><span>这里补充说明一下，由于测试过程缓慢，因此对所有数据的测试单独设置为一个可执行文件，这个将会在后面说明。</span></p><p><span>运行该文件即可训练模型，训练好的模型保存为model.pkl文件。</span></p><p><span>过程会生成一些字典文件，用于后续单独测试时使用。</span></p><h3><a name="mainevaluateipynb运行说明" class="md-header-anchor"></a><span>main_evaluate.ipynb运行说明</span></h3><p><span>运行该文件即可，该文件将会对测试集所有文件进行测试。</span></p><p><span>所有预测的结果将会保存为result.txt文件。</span></p><p><span>过程中预测情况如下，最终预测文件见文件链接。</span></p><center>
+   <img style="border-radius: 0.3125em;
+   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="images\2.png">
+   <br>
+   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+   display: inline-block;
+   color: #999;
+   padding: 2px;">预测过程示意</div>
+</center><p><span>预测结束后，将会输出全部测试集平均的bleu值，如下所示:</span></p><center>
+   <img style="border-radius: 0.3125em;
+   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="images\4.png">
+   <br>
+   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+   display: inline-block;
+   color: #999;
+   padding: 2px;">预测最终输出情况</div>
+</center><p><span>因此训练的模型bleu值为:</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Blue1</span></th><th style='text-align:center;' ><span>Bleu2</span></th><th style='text-align:center;' ><span>Bleu3</span></th><th style='text-align:center;' ><span>Bleu4</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>0.417</span></td><td style='text-align:center;' ><span>0.292</span></td><td style='text-align:center;' ><span>0.201</span></td><td style='text-align:center;' ><span>0.142</span></td></tr></tbody></table></figure><p><span>测试集前50条测试结果平均bleu情况如下，对比情况见文档末尾，全部测试集预测情况，请查看result.txt文件。</span></p><center>
+   <img style="border-radius: 0.3125em;
+   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="images\5.png">
+   <br>
+   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+   display: inline-block;
+   color: #999;
+   padding: 2px;">预测集前50条测试平均bleu值</div>
+</center><h2><a name="提交目录包含文件说明" class="md-header-anchor"></a><span>提交目录包含文件说明</span></h2><p><span>提交目录主要包含以下几个文件:</span></p><center>
+   <img style="border-radius: 0.3125em;
+   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="images\6.png">
+   <br>
+   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+   display: inline-block;
+   color: #999;
+   padding: 2px;">提交目录</div>
+</center><ul><li><span>images: 报告内容相关图片</span></li><li><strong><span>lib文件夹</span></strong><span>: 实现的模型，工具类等文件</span></li><li><strong><span>evaluate.py</span></strong><span>:测试时调用的核心函数</span></li><li><strong><span>first_50.py</span></strong><span>:可执行文件，用于预测测试集的前50个句子，并将输出生成为文件</span><strong><span>temp.xls</span></strong></li><li><strong><span>main_evaluate.ipynb</span></strong><span>:可执行文件，用于调用模型预测</span><strong><span>所有</span></strong><span>测试集数据</span></li><li><strong><span>main.ipynb</span></strong><span>：可执行文件，用于训练模型，并调用生成的模型进行预测</span></li><li><strong><span>report.html,repot.md,report.pdf</span></strong><span>：实验报告，可根据需要自由查看。</span></li><li><strong><span>requirements.yml</span></strong><span>:依赖的第三方库</span></li><li><strong><span>temp.xls</span></strong><span>：测试集前50句的对比情况。</span></li></ul><h2><a name="未提交模型以及其他文件链接" class="md-header-anchor"></a><span>未提交模型以及其他文件链接</span></h2><p><span>链接中主要包含以下几个文件</span></p><ul><li><p><span>训练好的模型: </span><strong><span>model.pkl</span></strong></p></li><li><p><span>数据集文件: </span><strong><span>DataFolders</span></strong></p></li><li><p><span>通过训练数据集</span><strong><span>生成的字典等文件</span></strong><span>(也可以调用Data.prepare_train(g_max_seq1, g_max_seq2))重新生成。</span></p><p><span>如果只参与测试，则需要使用链接中的文件</span></p></li><li><p><span>测试集预测结果文件: </span><strong><span>result.txt</span></strong></p></li></ul><p><span>使用方法：将文件压缩包解压后放在主目录下即可，文件结构应该为下图所示情况。</span></p><center>
+   <img style="border-radius: 0.3125em;
+   box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="images\3.png">
+   <br>
+   <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+   display: inline-block;
+   color: #999;
+   padding: 2px;">文件结构情况</div>
+</center><p><span>文件链接：</span><strong><a href='https://pan.baidu.com/s/15MBXbBtx9MR8igT-q2-0Gg' target='_blank' class='url'>https://pan.baidu.com/s/15MBXbBtx9MR8igT-q2-0Gg</a></strong></p><p><span>提取码: </span><strong><span>sdxx</span></strong></p><h2><a name="测试集前50条数据测试结果对比" class="md-header-anchor"></a><span>测试集前50条数据测试结果对比</span></h2><table>
+   <tbody><tr>
+      <td>id</td>
+      <td>label</td>
+      <td>value</td>
+   </tr>
+   <tr>
+      <td>0</td>
+      <td>英文原文</td>
+      <td>Results The key nursing methods were to promote nurses fundamental diathesis to carry out mental care for the patients and the nursing during acetazolamide stress brain perfusion SPECT.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>结果提高护理人员的基本素质；做好患者的心理护理和乙酰唑胺负荷脑血流灌注显像中的护理是关键性的护理措施。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>结果：提高护理人员的基本素质，为临床患者及护理工作者的脑灌注提供了依据。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4029 ; Bleu2 : 0.3374 ; Bleu3 : 0.2708 ; Bleu4 : 0.2374</td>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>英文原文</td>
+      <td>Notwithstanding his youth, Master Andrea was a very skilful and intelligent boy.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>另一方面, 纠正错误的浪费时间和抑制学生的积极性却是不言而喻的.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>尽管他年青年，安德丽雅师长是一个很技巧的聪聪聪明的男孩。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.1283 ; Bleu2 : 0.0207 ; Bleu3 : 0.0114 ; Bleu4 : 0.0085</td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>英文原文</td>
+      <td>Worryingly, with only weeks before the law comes into effect, it has not yet been announced who will oversee it.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>更令人焦虑的是，距这部法律实施已经没有几周时间了，但是现在还没有宣布谁来监督这部法律。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>令人担心的是，只有几周之前才会出现，还没有宣布监督谁监督。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4043 ; Bleu2 : 0.2985 ; Bleu3 : 0.2167 ; Bleu4 : 0.1483</td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>英文原文</td>
+      <td>The impact of the car hitting the tree killed the driver.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>司机死于汽车撞到树后产生的冲击力.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>车撞撞撞撞撞车撞死了司机的撞击撞击死了司机。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.3182 ; Bleu2 : 0.1741 ; Bleu3 : 0.0533 ; Bleu4 : 0.0299</td>
+   </tr>
+   <tr>
+      <td>4</td>
+      <td>英文原文</td>
+      <td>The study of contacts of rough surfaces is a young and interdisciplinary field.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>粗糙表面接触研究是一门年轻的交叉学科。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>粗糙表面接触的研究是一个年幼的跨学科领域，是一个跨学科领域。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5 ; Bleu2 : 0.3939 ; Bleu3 : 0.3216 ; Bleu4 : 0.2649</td>
+   </tr>
+   <tr>
+      <td>5</td>
+      <td>英文原文</td>
+      <td>If you know someone who is a consultant, you should talk to that person.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>如果你知道有人是顾问，你应该找人。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>如果你知道一个顾问的人，你应该和那个人交谈。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6364 ; Bleu2 : 0.4924 ; Bleu3 : 0.3928 ; Bleu4 : 0.3128</td>
+   </tr>
+   <tr>
+      <td>6</td>
+      <td>英文原文</td>
+      <td>Some plants flower year in and year out.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>有些植物一年到头都开花.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>一些植花年年年年年花花花花。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.3571 ; Bleu2 : 0.1657 ; Bleu3 : 0.0612 ; Bleu4 : 0.038</td>
+   </tr>
+   <tr>
+      <td>7</td>
+      <td>英文原文</td>
+      <td>Demographic and clinical characteristics of individuals in a bipolar disorder case registry.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>双相障碍档案上的人口统计的特点和临床特征。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>双双极性疾病症患病症状病症状表中个人的人人人口统和临床特征。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.3667 ; Bleu2 : 0.318 ; Bleu3 : 0.2624 ; Bleu4 : 0.2117</td>
+   </tr>
+   <tr>
+      <td>8</td>
+      <td>英文原文</td>
+      <td>One of the program's priorities is to combine family and work life and develop more flexible and effective forms of work organization and support services.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>该项目的一个优先事项就是兼顾家庭与工作生活，制订更加灵活和更加有效的工作组织形式和支助服务形式。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>其中一个项目的优先事项是把家庭和工作生活结合起来，发展更灵活、更有效的工作组织和支持服务。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.7068 ; Bleu2 : 0.5344 ; Bleu3 : 0.396 ; Bleu4 : 0.3019</td>
+   </tr>
+   <tr>
+      <td>9</td>
+      <td>英文原文</td>
+      <td>Both silhouette preserving and shading preserving criteria are satisfied by applying a new error metric-constrained normal cone to view-independent simplification.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>算法为地表的简化提出一种新的基于受限法向锥的误差计算方法，使得模型简化具有轮廓保持和光照保持特性.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>将一个新的误差锥形图保护和遮保标准均满足保护条件的保护，以便简化。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.2426 ; Bleu2 : 0.1366 ; Bleu3 : 0.0718 ; Bleu4 : 0.0295</td>
+   </tr>
+   <tr>
+      <td>10</td>
+      <td>英文原文</td>
+      <td>Information technology - Open Systems Interconnection - Connection-oriented presentation protocol: Protocol specification</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>信息技术.开放系统互连.面向连接型表示协议：协议规范</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>信息技开开系统互联网.提交协议议议协议.协议规范.协议规规范</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5 ; Bleu2 : 0.3714 ; Bleu3 : 0.2701 ; Bleu4 : 0.1644</td>
+   </tr>
+   <tr>
+      <td>11</td>
+      <td>英文原文</td>
+      <td>Alan Beattie is the World Trade Editor of the Financial Times, leading the paper's coverage of trade policy and economic globalisation.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>艾伦•贝蒂是金融时报的世贸编辑，负责领导该报覆盖有关贸易政策与经济全球化的报道。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>艾伦·诗是金融时代的世贸编辑，导论文对贸易政策和经济全球化的报道。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6373 ; Bleu2 : 0.5676 ; Bleu3 : 0.5015 ; Bleu4 : 0.4398</td>
+   </tr>
+   <tr>
+      <td>12</td>
+      <td>英文原文</td>
+      <td>She kind of hoped he would come.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>她多少有点希望他会来。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>她希望他能来。她希望他能来。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4286 ; Bleu2 : 0.3145 ; Bleu3 : 0.202 ; Bleu4 : 0.093</td>
+   </tr>
+   <tr>
+      <td>13</td>
+      <td>英文原文</td>
+      <td>In oil seeds they may occupy a large fraction of total volume of reserve cells.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>在油质种子中,它们可占据贮藏细胞总体积的大部分.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>在油种中，他们可占占有大部分储备细胞总体积的总数。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.64 ; Bleu2 : 0.5164 ; Bleu3 : 0.4113 ; Bleu4 : 0.3121</td>
+   </tr>
+   <tr>
+      <td>14</td>
+      <td>英文原文</td>
+      <td>The source of the starting material need not be identified, but may be requested.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>起始原料的来源通常无需说明, 但有时会要.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>开始材料的源源不需要确认，但可能需要请求。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.3333 ; Bleu2 : 0.1291 ; Bleu3 : 0.0444 ; Bleu4 : 0.0264</td>
+   </tr>
+   <tr>
+      <td>15</td>
+      <td>英文原文</td>
+      <td>He'll hit the ceiling if I ask to change again.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>如果我要求再改变的话他会气疯的。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>如果我再次改变，他就打天天花板，我就要打上天花板。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.36 ; Bleu2 : 0.2121 ; Bleu3 : 0.1251 ; Bleu4 : 0.0546</td>
+   </tr>
+   <tr>
+      <td>16</td>
+      <td>英文原文</td>
+      <td>Mao Zedong's agricultural economic thought is through the whole process of Chinese revolution and construction .</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>毛泽东的农业经济思想贯穿着中国革命和建设的全过程。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>毛毛毛泽东农经经思想是中国革革革建的整过程和建设。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.68 ; Bleu2 : 0.4761 ; Bleu3 : 0.3092 ; Bleu4 : 0.1077</td>
+   </tr>
+   <tr>
+      <td>17</td>
+      <td>英文原文</td>
+      <td>Comprehensive multi-level exploration of buried active fault: an example of Yinchuan buried active fault</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>隐伏活动断层的多层次综合探测&amp;以银川隐伏活动断层为例</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>综综综综合地埋活故障综综综合多层探&amp;以银川隐积活故障为例</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5 ; Bleu2 : 0.36 ; Bleu3 : 0.2464 ; Bleu4 : 0.186</td>
+   </tr>
+   <tr>
+      <td>18</td>
+      <td>英文原文</td>
+      <td>Third the process of fighting for the leadership we must pay attention to the party and the people.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>第三，在争取领导权过程中对党和人民群众的的重视。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>第三，我们必须注重党人和人民的领导进程。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5322 ; Bleu2 : 0.3386 ; Bleu3 : 0.2185 ; Bleu4 : 0.0842</td>
+   </tr>
+   <tr>
+      <td>19</td>
+      <td>英文原文</td>
+      <td>Analysis of the protection of all-bridged GTR resistance welding inverter</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>全桥式GTR逆变电阻焊电源的保护分析</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>引引引引焊耐焊逆变逆焊焊逆变器防护的分析分析分析了引焊耐焊逆变逆变器的防护性分析分析。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.1628 ; Bleu2 : 0.088 ; Bleu3 : 0.0266 ; Bleu4 : 0.0147</td>
+   </tr>
+   <tr>
+      <td>20</td>
+      <td>英文原文</td>
+      <td>The purpose of my thesis is to find out the suitable credit risk measurement model in our country, which can improve the credit risk management level of our banks.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>本文研究的主旨在于通过分析和比较现代信用风险度量模型，试图找出适合我国实际的信用风险模型，以提高我国银行业的竞争力。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>本文旨在探索我国的适当信用风险评估模型，可以提高我国银行信用风险管理水平。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4137 ; Bleu2 : 0.3328 ; Bleu3 : 0.2618 ; Bleu4 : 0.2058</td>
+   </tr>
+   <tr>
+      <td>21</td>
+      <td>英文原文</td>
+      <td>Ben's hobby is collecting stamps. He has many beautiful stamps. He is showing them to his classmates.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>本的业余爱好是集邮。他有许多漂亮的邮票。他正在把它们给他的同学们看。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>本的爱好是集邮邮邮。他有很多美丽的邮票，他正在向同学展示他们。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6442 ; Bleu2 : 0.5034 ; Bleu3 : 0.3815 ; Bleu4 : 0.2711</td>
+   </tr>
+   <tr>
+      <td>22</td>
+      <td>英文原文</td>
+      <td>While travelling, they entrusted their children to the care of baby sitter.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>他们在若干名士兵的保护下外出旅行.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>旅行时，他们把孩子们的孩子送给宝宝保护照护保护保护。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.2692 ; Bleu2 : 0.1797 ; Bleu3 : 0.0513 ; Bleu4 : 0.0277</td>
+   </tr>
+   <tr>
+      <td>23</td>
+      <td>英文原文</td>
+      <td>Pour into the prepared baking pan.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>倒入备好的玻璃烤盘内。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>倒入准备的烤盘里，倒入做烤盘。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4667 ; Bleu2 : 0.2582 ; Bleu3 : 0.08 ; Bleu4 : 0.0455</td>
+   </tr>
+   <tr>
+      <td>24</td>
+      <td>英文原文</td>
+      <td>Meanwhile, China's political cycle may exacerbate risks of an asset bubble.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>同时，中国的政治周期也可能加剧资产泡沫风险。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>同时，中国政循环可能会加剧资产泡泡泡泡泡沫的风险。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.72 ; Bleu2 : 0.6 ; Bleu3 : 0.4785 ; Bleu4 : 0.3757</td>
+   </tr>
+   <tr>
+      <td>25</td>
+      <td>英文原文</td>
+      <td>It was in light of the above spirit that China took a constructive part in the Security Council discussions. We are ready to stay in communication with relevant parties over this.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>中方秉承上述精神，以建设性的态度参加了安理会有关讨论，我们愿就此与有关各方继续保持沟通。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>鉴于上述精神，中国在安全理事会讨论中取得建设性的成果，我们准备与有关的各方进行沟通。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5903 ; Bleu2 : 0.4538 ; Bleu3 : 0.3399 ; Bleu4 : 0.2317</td>
+   </tr>
+   <tr>
+      <td>26</td>
+      <td>英文原文</td>
+      <td>Many put plenty of stock in a team's success.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>很多人将球队的战绩看得很重。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>许多人把大量的股票投入到团队成功的成功中。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.2381 ; Bleu2 : 0.1091 ; Bleu3 : 0.0397 ; Bleu4 : 0.0243</td>
+   </tr>
+   <tr>
+      <td>27</td>
+      <td>英文原文</td>
+      <td>In his mind a voice cried, Now is the time of testing.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>他脑海中有个声音在大喊, 现在正是一决雌雄的时候了.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>在他的脑声里哭了，现在是测试的时候。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4142 ; Bleu2 : 0.2226 ; Bleu3 : 0.128 ; Bleu4 : 0.0555</td>
+   </tr>
+   <tr>
+      <td>28</td>
+      <td>英文原文</td>
+      <td>These patients also were receiving drugs known as azathioprine or 6 - mercaptopurine.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>这些患者同时接受了硫唑嘌呤或巯基嘌呤治疗.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>这些病人也被称为硫唑硫唑或6或6例药物。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.2378 ; Bleu2 : 0.1543 ; Bleu3 : 0.0501 ; Bleu4 : 0.029</td>
+   </tr>
+   <tr>
+      <td>29</td>
+      <td>英文原文</td>
+      <td>The use of calcium sulfate requires an greater capital investment .</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>使用硫酸钙做原料，需要更多的基建投资。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>硫硫酸钙的使用需要更大的资本投资，需要更大的资本投资。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4815 ; Bleu2 : 0.3849 ; Bleu3 : 0.2873 ; Bleu4 : 0.1773</td>
+   </tr>
+   <tr>
+      <td>30</td>
+      <td>英文原文</td>
+      <td>Mice doing obeisance for peach</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>景点名称：老鼠拜桃</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>老鼠为桃子做客守守守守桃守桃守的守桃子。桃子的守守守守守。桃子桃。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.0909 ; Bleu2 : 0.0533 ; Bleu3 : 0.0209 ; Bleu4 : 0.0132</td>
+   </tr>
+   <tr>
+      <td>31</td>
+      <td>英文原文</td>
+      <td>In the paper analysis of wear mechanism of circular diamond saw blades with several typical segment structures being widely used in stone processing area.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>本文对目前石材加工领域广泛使用的具有几种典型节块结构的金刚石圆锯片的磨损机理进行了一些分析。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>本文分析了圆钻石锯刀的磨损机理，具有几种典型的段结构在石加工领域广泛应用。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6569 ; Bleu2 : 0.4932 ; Bleu3 : 0.3914 ; Bleu4 : 0.3243</td>
+   </tr>
+   <tr>
+      <td>32</td>
+      <td>英文原文</td>
+      <td>How did leaving Portugal for Spain affect you development as a coach?</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>离开葡萄牙去西班牙对你发展成一名教练有什么影响?</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>西西西西西班牙如何影响你的发展作为教教练的影响你们的发展？如何？</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.3125 ; Bleu2 : 0.2245 ; Bleu3 : 0.1189 ; Bleu4 : 0.0491</td>
+   </tr>
+   <tr>
+      <td>33</td>
+      <td>英文原文</td>
+      <td>Object used to create a new child node at the beginning of the list of child nodes of the current node.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>对象,该对象用于在当前节点的子节点列表的开始处创建一个新的子节点。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>用于在当当节节点的初创新节点的子节点列表中创建新的儿节节点。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6032 ; Bleu2 : 0.5133 ; Bleu3 : 0.4248 ; Bleu4 : 0.3523</td>
+   </tr>
+   <tr>
+      <td>34</td>
+      <td>英文原文</td>
+      <td>The calculation results of unsteady flow in an exhaust manifold model are presented.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>最后对一根模型排气管进行了不稳定的流场计算。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>提出了排气管流模型中不稳定流流流的计算结果。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6364 ; Bleu2 : 0.4264 ; Bleu3 : 0.263 ; Bleu4 : 0.0989</td>
+   </tr>
+   <tr>
+      <td>35</td>
+      <td>英文原文</td>
+      <td>To avoid these negative effects bring a false academic prosperity, academic theorists have already explored the issue too much.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>为尽可能地避免这些负面影响给高校学术带来虚假繁荣，理论界已经对高校学术异化问题进行了许多的探索。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>为避免这些负面影响导致虚假学术繁荣，学理论家已经探究了这一问题。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4928 ; Bleu2 : 0.3674 ; Bleu3 : 0.2673 ; Bleu4 : 0.2114</td>
+   </tr>
+   <tr>
+      <td>36</td>
+      <td>英文原文</td>
+      <td>The design route deviation succinct isgraceful, the vitality long-time clothing to the manufacture.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>设计路线偏向于制作简洁优雅、生命力长久的服饰。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>设设设路线偏简简洁，长时间服装对制造工业的生命力长。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5385 ; Bleu2 : 0.3595 ; Bleu3 : 0.2528 ; Bleu4 : 0.1628</td>
+   </tr>
+   <tr>
+      <td>37</td>
+      <td>英文原文</td>
+      <td>The company doubled up with hilarity.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>大伙儿乐得弯下腰来.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>公公司狂欢地使公司变翻了一倍，狂欢地大笑。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.0476 ; Bleu2 : 0.0154 ; Bleu3 : 0.0108 ; Bleu4 : 0.0091</td>
+   </tr>
+   <tr>
+      <td>38</td>
+      <td>英文原文</td>
+      <td>The rock left a chip in the paint.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>石头在油漆留下了一道缺口.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>石石石在油漆上留了一块芯片。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5 ; Bleu2 : 0.3397 ; Bleu3 : 0.2126 ; Bleu4 : 0.0967</td>
+   </tr>
+   <tr>
+      <td>39</td>
+      <td>英文原文</td>
+      <td>Wish you all A Fantastic Happy Rabbit Year 2011.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>祝大家兔年快乐，福星高照。恭喜恭喜！</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>祝你们全一个美好快快兔年一年一年一一一美好的快乐兔子。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.2222 ; Bleu2 : 0.1307 ; Bleu3 : 0.0409 ; Bleu4 : 0.0231</td>
+   </tr>
+   <tr>
+      <td>40</td>
+      <td>英文原文</td>
+      <td>Do you, Princeton Girl, feel like you made the right choice meeting me here tonight?</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>普林斯顿女孩儿，你觉得今天晚上来见我的决定做的对吗?</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>你是吗，普林斯林顿女孩，你觉得你今晚在这里做出了正确的选择会我的选择吗？</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4722 ; Bleu2 : 0.3285 ; Bleu3 : 0.2333 ; Bleu4 : 0.1401</td>
+   </tr>
+   <tr>
+      <td>41</td>
+      <td>英文原文</td>
+      <td>eat, drink, and be merry -- that's his philosophy</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>吃喝玩乐,那就是他的人生哲学</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>吃吃喝酒，喝快乐--那是他的哲哲哲学。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4737 ; Bleu2 : 0.3244 ; Bleu3 : 0.1836 ; Bleu4 : 0.0789</td>
+   </tr>
+   <tr>
+      <td>42</td>
+      <td>英文原文</td>
+      <td>He was able to make other noises , for instance , short , cough-like grunts , accompanying his pantomimed communications .</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>他可以发出噪音，例如短暂、像是咳嗽呼噜声并且伴随著手势上的沟通。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>例如，他能够制造噪音，短短，呼声呼声，伴随他的通信。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4275 ; Bleu2 : 0.233 ; Bleu3 : 0.1216 ; Bleu4 : 0.0499</td>
+   </tr>
+   <tr>
+      <td>43</td>
+      <td>英文原文</td>
+      <td>on the other hand, we found a new and easier way to reconstruct nuclei in the central nervous system.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>另一方面找到了一种较简单易行的立体重建中枢神经系统神经核团的新方法。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>另一方面，我们发现了一种新的方式，在中枢神经系统中重构核核的新方法。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.6176 ; Bleu2 : 0.5119 ; Bleu3 : 0.4342 ; Bleu4 : 0.3548</td>
+   </tr>
+   <tr>
+      <td>44</td>
+      <td>英文原文</td>
+      <td>The absence of it is not an assured ground of condemnation, but the presence of it is an invariable sign of goodness of heart.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>它的缺失虽然不能成为你被谴责的理由，但是存有爱美之心却是拥有一颗善良之心的不变的标志。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>没有被放心的谴责，但是它的存在是一个不变的迹象。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.3398 ; Bleu2 : 0.2165 ; Bleu3 : 0.1245 ; Bleu4 : 0.0452</td>
+   </tr>
+   <tr>
+      <td>45</td>
+      <td>英文原文</td>
+      <td>We need not have hurried.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>我们当时实在不必那么匆忙.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>我们不需急急急急急急急。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.23 ; Bleu2 : 0.1387 ; Bleu3 : 0.0561 ; Bleu4 : 0.0367</td>
+   </tr>
+   <tr>
+      <td>46</td>
+      <td>英文原文</td>
+      <td>Return result sets that include many rows, from several thousand to several million rows.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>返回包括很多行的结果集，从数千行到数百万行。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>返结结结果集包括许多行，从数千万到几千万行。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.7273 ; Bleu2 : 0.5583 ; Bleu3 : 0.3965 ; Bleu4 : 0.2393</td>
+   </tr>
+   <tr>
+      <td>47</td>
+      <td>英文原文</td>
+      <td>EXAMPLE " Whoever wins in Florida will have enough votes to break the tie. "</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>谁赢了弗 罗里 达谁就能打破僵局获得足够的选票赢得比赛.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>在佛罗佛达州赢的人有足够的选票可以打破这场比赛。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.46 ; Bleu2 : 0.3323 ; Bleu3 : 0.2402 ; Bleu4 : 0.1867</td>
+   </tr>
+   <tr>
+      <td>48</td>
+      <td>英文原文</td>
+      <td>The judge had made a terrible bluder, so he had to step down.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>法官犯了大错，所以他只好下台。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>法官犯了一个可怕的事，所以他必须下台。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.5789 ; Bleu2 : 0.5073 ; Bleu3 : 0.423 ; Bleu4 : 0.3119</td>
+   </tr>
+   <tr>
+      <td>49</td>
+      <td>英文原文</td>
+      <td>That colored one is over beautiful.</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>参考翻译</td>
+      <td>那个彩色的很漂亮。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>候选翻译</td>
+      <td>那彩色的人是美丽的美。</td>
+   </tr>
+   <tr>
+      <td></td>
+      <td>Bleu</td>
+      <td>Bleu1 : 0.4545 ; Bleu2 : 0.3015 ; Bleu3 : 0.2162 ; Bleu4 : 0.106</td>
+   </tr>
+</tbody></table></div>
+</body>
+</html>
