@@ -85,6 +85,8 @@ def scoring(truth_f, sub_f):
         ndcg10s.append(ndcg10)
         
         line_index += 1
+        if line_index % 10000 == 0:
+            print("Line {} handled".format(line_index))
 
     return np.mean(aucs), np.mean(mrrs), np.mean(ndcg5s), np.mean(ndcg10s)
         
@@ -115,15 +117,16 @@ if __name__ == '__main__':
     #     output_file.close()
 
     output_dir = './'
-    output_filename = os.path.join(output_dir, 'scores.txt')            
+    # output_filename = os.path.join(output_dir, 'scores.txt')  
+    output_filename = os.path.join(output_dir, 'dev_scores.txt')              
     output_file = open(output_filename, 'w')
 
     # truth_file = open(os.path.join(truth_dir, "truth.txt"), 'r')
     # submission_answer_file = open(os.path.join(submit_dir, "prediction.txt"), 'r')
     truth_dir = './'
     submit_dir = './'
-    truth_file = open(os.path.join(truth_dir, "truth.txt"), 'r')
-    submission_answer_file = open(os.path.join(submit_dir, "prediction.txt"), 'r')
+    truth_file = open(os.path.join(truth_dir, "dev_truth.txt"), 'r')
+    submission_answer_file = open(os.path.join(submit_dir, "dev_prediction.txt"), 'r')
 
     auc, mrr, ndcg, ndcg10 = scoring(truth_file, submission_answer_file)
     print(auc)

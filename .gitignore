@@ -4,3 +4,11 @@ Project4/drop2
 Project4/model.pkl
 Project4/result.txt
 Project5/data
+Project5/glove.6B
+Project5/Processed
+Project5/qmodel
+Project5/dev_prediction.txt
+Project5/dev_truth.txt
+Project5/large_model-0.668.pkl
+Project5/prediction.txt
+
